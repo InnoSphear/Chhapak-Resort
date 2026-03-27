@@ -4,19 +4,51 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Chhapak Resort - A luxury lakeside retreat for stays, celebrations, and signature hospitality. Experience premium accommodations, grand event venues, and exceptional service." />
-    <meta name="keywords" content="luxury resort, wedding venue, corporate events, birthday celebrations, lakeside resort, Chhapak Resort" />
+    <meta name="description" content="Chhapak Resort - A luxury destination for celebrations and experiences. Premium venue for weddings, birthdays, anniversaries, corporate events, and private parties." />
+    <meta name="keywords" content="luxury resort, wedding venue, birthday celebrations, corporate events, anniversary parties, private parties, event venue, celebration destination, Chhapak Resort" />
     <meta name="author" content="Chhapak Resort" />
-    <meta property="og:title" content="Chhapak Resort | Luxury Lakeside Retreat" />
-    <meta property="og:description" content="A cinematic retreat for stays, celebrations, and signature hospitality." />
+    <meta property="og:title" content="Chhapak Resort | Luxury Celebration Destination" />
+    <meta property="og:description" content="Where celebrations become timeless memories. Premium event venue for weddings, birthdays, and corporate gatherings." />
     <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <title>Chhapak Resort | Luxury Lakeside Retreat</title>
+    <title>Chhapak Resort | Luxury Celebration Destination</title>
+    <style>
+      .loading-screen {
+        position: fixed;
+        inset: 0;
+        background: #FFFEF9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      .loading-logo {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #D4AF37, #C5A028);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading-screen">
+        <div class="loading-logo">
+          <span class="text-white font-bold text-3xl">C</span>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

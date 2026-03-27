@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/public/Home";
-import Rooms from "./pages/public/Rooms";
-import RoomDetails from "./pages/public/RoomDetails";
-import Events from "./pages/public/Events";
+import Experiences from "./pages/public/Experiences";
+import ExperienceDetail from "./pages/public/ExperienceDetail";
+import Venues from "./pages/public/Venues";
 import Gallery from "./pages/public/Gallery";
+import Amenities from "./pages/public/Amenities";
+import Inquiry from "./pages/public/Inquiry";
 import Contact from "./pages/public/Contact";
 import AdminLayout from "./pages/admin/AdminLayout";
-import AdminDashboard from "./pages/admin/Dashboard";
-import AdminRooms from "./pages/admin/AdminRooms";
-import AdminBookings from "./pages/admin/AdminBookings";
-import AdminEvents from "./pages/admin/AdminEvents";
+import Dashboard from "./pages/admin/Dashboard";
+import AdminInquiries from "./pages/admin/AdminInquiries";
 import AdminGallery from "./pages/admin/AdminGallery";
 import AdminTestimonials from "./pages/admin/AdminTestimonials";
 import AdminCMS from "./pages/admin/AdminCMS";
@@ -17,27 +17,26 @@ import AdminLogin from "./pages/admin/AdminLogin";
 
 function App() {
   return (
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/rooms/:slug" element={<RoomDetails />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/events/:slug" element={<Events />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/experiences" element={<Experiences />} />
+      <Route path="/experiences/:slug" element={<ExperienceDetail />} />
+      <Route path="/venues" element={<Venues />} />
+      <Route path="/gallery" element={<Gallery />} />
+      <Route path="/amenities" element={<Amenities />} />
+      <Route path="/inquiry" element={<Inquiry />} />
+      <Route path="/contact" element={<Contact />} />
 
-        <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin/login" element={<AdminLogin />} />
 
-        <Route element={<AdminLayout />}>
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/rooms" element={<AdminRooms />} />
-          <Route path="/admin/bookings" element={<AdminBookings />} />
-          <Route path="/admin/events" element={<AdminEvents />} />
-          <Route path="/admin/gallery" element={<AdminGallery />} />
-          <Route path="/admin/testimonials" element={<AdminTestimonials />} />
-          <Route path="/admin/cms" element={<AdminCMS />} />
-        </Route>
-      </Routes>
+      <Route element={<AdminLayout />}>
+        <Route path="/admin" element={<Dashboard />} />
+        <Route path="/admin/inquiries" element={<AdminInquiries />} />
+        <Route path="/admin/gallery" element={<AdminGallery />} />
+        <Route path="/admin/testimonials" element={<AdminTestimonials />} />
+        <Route path="/admin/cms" element={<AdminCMS />} />
+      </Route>
+    </Routes>
   );
 }
 

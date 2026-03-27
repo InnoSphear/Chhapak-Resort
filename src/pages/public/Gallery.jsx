@@ -1,121 +1,137 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Image as ImageIcon, ArrowRight } from "lucide-react";
+import { Navbar } from "../../components/Navbar";
+import { Footer } from "../../components/Footer";
+import { Link } from "react-router-dom";
 
-const galleryImages = [
-  { id: 1, title: "Luxury Pool", category: "resort", image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600" },
-  { id: 2, title: "Executive Suite", category: "room", image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600" },
-  { id: 3, title: "Wedding Venue", category: "wedding", image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600" },
-  { id: 4, title: "Fine Dining", category: "resort", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" },
-  { id: 5, title: "Super Deluxe", category: "room", image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600" },
-  { id: 6, title: "Birthday Setup", category: "birthday", image: "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600" },
-  { id: 7, title: "Anniversary", category: "anniversary", image: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600" },
-  { id: 8, title: "Corporate Event", category: "corporate", image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600" },
-  { id: 9, title: "Garden View", category: "resort", image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" },
-  { id: 10, title: "Deluxe Room", category: "room", image: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=600" },
-  { id: 11, title: "Resort Facade", category: "resort", image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600" },
-  { id: 12, title: "Lounge Area", category: "resort", image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600" },
+const galleryItems = [
+  { id: 1, type: "image", src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200", category: "weddings", title: "Grand Wedding Reception" },
+  { id: 2, type: "image", src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200", category: "venues", title: "Lawn Setup" },
+  { id: 3, type: "image", src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1200", category: "celebrations", title: "Birthday Celebration" },
+  { id: 4, type: "image", src: "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?w=1200", category: "anniversaries", title: "Anniversary Dinner" },
+  { id: 5, type: "image", src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200", category: "corporate", title: "Corporate Gala" },
+  { id: 6, type: "image", src: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=1200", category: "venues", title: "Poolside Evening" },
+  { id: 7, type: "image", src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200", category: "celebrations", title: "Anniversary Party" },
+  { id: 8, type: "image", src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200", category: "weddings", title: "Wedding Ceremony" },
+  { id: 9, type: "image", src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200", category: "weddings", title: "Bridal Preparations" },
+  { id: 10, type: "image", src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200", category: "weddings", title: "Wedding Decor" },
+  { id: 11, type: "image", src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200", category: "weddings", title: "Reception Setup" },
+  { id: 12, type: "image", src: "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=1200", category: "celebrations", title: "Party Setup" },
+  { id: 13, type: "image", src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200", category: "venues", title: "Rooftop View" },
+  { id: 14, type: "image", src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200", category: "corporate", title: "Conference Room" },
+  { id: 15, type: "image", src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1200", category: "celebrations", title: "Birthday Decor" },
+  { id: 16, type: "image", src: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=1200", category: "weddings", title: "Wedding Venue" },
+  { id: 17, type: "image", src: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200", category: "corporate", title: "Event Setup" },
+  { id: 18, type: "image", src: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200", category: "corporate", title: "Presentation" },
 ];
 
-const categories = ["All", "resort", "room", "wedding", "birthday", "anniversary", "corporate"];
-
-function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  useState(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
-  return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-white/98 backdrop-blur-xl shadow-lg py-3" : "bg-white py-5"}`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-xl">C</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="font-bold text-xl text-gray-900">Chhapak</h1>
-              <p className="text-xs text-amber-600 tracking-widest uppercase">Resort</p>
-            </div>
-          </Link>
-          <div className="hidden lg:flex items-center gap-1">
-            {[["Home", "/"], ["Rooms", "/rooms"], ["Events", "/events"], ["Gallery", "/gallery"], ["Contact", "/contact"]].map(([label, href]) => (
-              <Link key={href} to={href} className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${href === "/gallery" ? "text-amber-600 bg-amber-50" : "text-gray-700 hover:text-amber-600 hover:bg-amber-50"}`}>
-                {label}
-              </Link>
-            ))}
-          </div>
-          <Link to="/rooms" className="hidden sm:flex px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold rounded-full transition-all">
-            Book Now
-          </Link>
-        </div>
-      </div>
-    </nav>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Chhapak Resort. All rights reserved.</p>
-      </div>
-    </footer>
-  );
-}
+const categories = [
+  { id: "all", label: "All" },
+  { id: "weddings", label: "Weddings" },
+  { id: "celebrations", label: "Celebrations" },
+  { id: "corporate", label: "Corporate" },
+  { id: "venues", label: "Venues" },
+];
 
 export default function Gallery() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const filteredImages = activeCategory === "All" ? galleryImages : galleryImages.filter(img => img.category === activeCategory);
-  const currentIndex = filteredImages.findIndex(img => img.id === selectedImage?.id);
+  const filteredItems = activeCategory === "all" 
+    ? galleryItems 
+    : galleryItems.filter(item => item.category === activeCategory);
 
-  const next = () => setSelectedImage(filteredImages[(currentIndex + 1) % filteredImages.length]);
-  const prev = () => setSelectedImage(filteredImages[(currentIndex - 1 + filteredImages.length) % filteredImages.length]);
+  const currentIndex = filteredItems.findIndex(item => item.id === selectedImage?.id);
+
+  const nextImage = () => {
+    if (currentIndex < filteredItems.length - 1) {
+      setSelectedImage(filteredItems[currentIndex + 1]);
+    }
+  };
+
+  const prevImage = () => {
+    if (currentIndex > 0) {
+      setSelectedImage(filteredItems[currentIndex - 1]);
+    }
+  };
 
   return (
     <main>
       <Navbar />
-      <section className="pt-32 pb-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-            A Visual <span className="text-amber-600">Journey</span>
-          </motion.h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Explore our stunning resort through these carefully curated images.</p>
-        </div>
-      </section>
+      
+      <section className="pt-32 pb-8 bg-cream">
+        <div className="container-luxury">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-3xl mx-auto mb-12"
+          >
+            <span className="eyebrow-text">Visual Stories</span>
+            <h1 className="heading-main mb-6">
+              Our <span className="text-gradient-gold">Gallery</span>
+            </h1>
+            <p className="heading-sub">
+              A glimpse into the magical moments we've created for our guests. Every event tells a unique story.
+            </p>
+          </motion.div>
 
-      <section className="py-4 bg-white border-b sticky top-16 z-30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex gap-2 overflow-x-auto pb-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-wrap justify-center gap-3"
+          >
             {categories.map((cat) => (
-              <button key={cat} onClick={() => setActiveCategory(cat)} className={`px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all ${activeCategory === cat ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>
-                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
+                  activeCategory === cat.id
+                    ? "bg-gold text-white"
+                    : "bg-white text-charcoal hover:bg-sand"
+                }`}
+              >
+                {cat.label}
               </button>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <section className="pb-24 bg-cream">
+        <div className="container-luxury">
+          <motion.div 
+            layout
+            className="masonry-grid"
+          >
             <AnimatePresence>
-              {filteredImages.map((img, index) => (
-                <motion.div key={img.id} layout initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.3 }}
-                  className={`relative group cursor-pointer overflow-hidden rounded-2xl ${index % 5 === 0 ? "md:col-span-2 md:row-span-2" : ""}`}
-                  onClick={() => setSelectedImage(img)}>
-                  <img src={img.image} alt={img.title} className="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                    <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Expand className="w-5 h-5 text-gray-900" />
+              {filteredItems.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="masonry-item group cursor-pointer"
+                  onClick={() => setSelectedImage(item)}
+                >
+                  <div className="relative overflow-hidden rounded-2xl">
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-xs font-medium text-gold uppercase tracking-wider mb-1">
+                        {item.category}
+                      </span>
+                      <h3 className="text-white font-semibold text-lg">{item.title}</h3>
                     </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                    <p className="text-white font-medium">{img.title}</p>
+                    <div className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ImageIcon className="w-5 h-5 text-white" />
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -124,21 +140,85 @@ export default function Gallery() {
         </div>
       </section>
 
+      <section className="py-24 bg-gradient-to-r from-charcoal to-charcoal-light">
+        <div className="container-luxury text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              Want to See More?
+            </h2>
+            <p className="text-white/70 mb-8 max-w-xl mx-auto">
+              Schedule a visit to experience our venues in person and envision your perfect event.
+            </p>
+            <Link to="/inquiry">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-4 bg-gradient-to-r from-gold to-gold-dark text-white font-semibold rounded-full flex items-center gap-2 mx-auto"
+              >
+                Schedule a Visit
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <Footer />
+
       <AnimatePresence>
         {selectedImage && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center" onClick={() => setSelectedImage(null)}>
-            <button className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center" onClick={() => setSelectedImage(null)}><X className="w-6 h-6 text-white" /></button>
-            <button className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center" onClick={(e) => { e.stopPropagation(); prev(); }}><ChevronLeft className="w-6 h-6 text-white" /></button>
-            <motion.img key={selectedImage.id} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} src={selectedImage.image} alt={selectedImage.title} className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg" onClick={(e) => e.stopPropagation()} />
-            <button className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center" onClick={(e) => { e.stopPropagation(); next(); }}><ChevronRight className="w-6 h-6 text-white" /></button>
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-              <p className="text-white text-lg font-medium">{selectedImage.title}</p>
-              <p className="text-white/60 text-sm mt-1">{currentIndex + 1} / {filteredImages.length}</p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-charcoal/95 flex items-center justify-center"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-6 right-6 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <button
+              onClick={(e) => { e.stopPropagation(); prevImage(); }}
+              disabled={currentIndex === 0}
+              className="absolute left-6 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors disabled:opacity-30"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <motion.img
+              key={selectedImage.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              src={selectedImage.src}
+              alt={selectedImage.title}
+              className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            <button
+              onClick={(e) => { e.stopPropagation(); nextImage(); }}
+              disabled={currentIndex === filteredItems.length - 1}
+              className="absolute right-6 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors disabled:opacity-30"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center">
+              <p className="text-white/60 text-sm">{currentIndex + 1} / {filteredItems.length}</p>
+              <h3 className="text-white font-semibold mt-2">{selectedImage.title}</h3>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-      <Footer />
     </main>
   );
 }

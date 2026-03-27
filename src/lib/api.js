@@ -35,14 +35,12 @@ api.interceptors.response.use(
 
 export const publicApi = {
   getOverview: () => api.get("/public/overview"),
-  getRooms: () => api.get("/rooms"),
-  getRoom: (slug) => api.get(`/rooms/${slug}`),
   getEvents: () => api.get("/events"),
   getEvent: (slug) => api.get(`/events/${slug}`),
   getGallery: (params) => api.get("/gallery", { params }),
   getTestimonials: () => api.get("/testimonials"),
-  submitBooking: (data) => api.post("/bookings", data),
   submitEventInquiry: (data) => api.post("/events/inquiry", data),
+  submitContact: (data) => api.post("/public/contact", data),
 };
 
 export const authApi = {
@@ -52,16 +50,10 @@ export const authApi = {
 
 export const adminApi = {
   getStats: () => api.get("/admin/dashboard"),
-  getRooms: () => api.get("/admin/rooms"),
-  createRoom: (data) => api.post("/admin/rooms", data),
-  updateRoom: (id, data) => api.put(`/admin/rooms/${id}`, data),
-  deleteRoom: (id) => api.delete(`/admin/rooms/${id}`),
-  getBookings: () => api.get("/admin/bookings"),
-  updateBooking: (id, data) => api.put(`/admin/bookings/${id}`, data),
-  getEvents: () => api.get("/admin/events"),
-  createEvent: (data) => api.post("/admin/events", data),
-  updateEvent: (id, data) => api.put(`/admin/events/${id}`, data),
-  deleteEvent: (id) => api.delete(`/admin/events/${id}`),
+  getInquiries: () => api.get("/admin/inquiries"),
+  getInquiry: (id) => api.get(`/admin/inquiries/${id}`),
+  updateInquiry: (id, data) => api.put(`/admin/inquiries/${id}`, data),
+  deleteInquiry: (id) => api.delete(`/admin/inquiries/${id}`),
   getGallery: () => api.get("/admin/gallery"),
   createGalleryItem: (data) => api.post("/admin/gallery", data),
   updateGalleryItem: (id, data) => api.put(`/admin/gallery/${id}`, data),
@@ -72,6 +64,13 @@ export const adminApi = {
   deleteTestimonial: (id) => api.delete(`/admin/testimonials/${id}`),
   getCmsContent: () => api.get("/cms"),
   updateCmsContent: (key, value) => api.put(`/cms/${key}`, { value }),
+  uploadFile: (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    return api.post("/upload", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+  },
 };
 
 export default api;

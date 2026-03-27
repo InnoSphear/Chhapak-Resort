@@ -2,25 +2,28 @@ import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
   ArrowUpRight,
-  BedDouble,
   Calendar,
   Image,
   LayoutDashboard,
   LogOut,
   Menu,
+  MessageSquare,
   Settings,
   ShieldCheck,
   Star,
   Users,
-  Waves,
   X,
+  Inbox,
+  Eye,
+  CheckCircle,
+  Clock,
+  Phone,
+  Mail
 } from "lucide-react";
 
 const adminNav = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
-  { label: "Rooms", href: "/admin/rooms", icon: BedDouble },
-  { label: "Bookings", href: "/admin/bookings", icon: Calendar },
-  { label: "Events", href: "/admin/events", icon: Users },
+  { label: "Inquiries", href: "/admin/inquiries", icon: Inbox },
   { label: "Gallery", href: "/admin/gallery", icon: Image },
   { label: "Testimonials", href: "/admin/testimonials", icon: Star },
   { label: "CMS", href: "/admin/cms", icon: Settings },
@@ -89,8 +92,8 @@ export default function AdminLayout() {
                     <ShieldCheck className="mt-1 h-5 w-5 text-gold-light" />
                   </div>
                   <div className="flex items-center gap-2 text-sm text-white/70">
-                    <Waves className="h-4 w-4 text-gold-light" />
-                    Resort systems and guest flows in one place
+                    <Inbox className="h-4 w-4 text-gold-light" />
+                    Manage inquiries & content
                   </div>
                 </>
               ) : (
