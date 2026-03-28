@@ -17,6 +17,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 
 function App() {
   return (
+    <div className="bg-gray-700">
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/experiences" element={<Experiences />} />
@@ -37,6 +38,7 @@ function App() {
         <Route path="/admin/cms" element={<AdminCMS />} />
       </Route>
     </Routes>
+    </div>
   );
 }
 

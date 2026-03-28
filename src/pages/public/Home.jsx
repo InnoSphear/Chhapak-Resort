@@ -38,7 +38,7 @@ const experiences = [
     id: "weddings",
     title: "Wedding",
     subtitle: "Fairytale Celebrations",
-    description: "Transform your dream wedding into an unforgettable reality. From intimate ceremonies to grand receptions, we craft every detail with elegance and precision.",
+    description: "Create your dream wedding at our luxury resort. From intimate ceremonies to grand receptions, every detail is crafted with elegance and perfection.",
     image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
     capacity: "Up to 600 Guests",
     icon: Heart,
@@ -48,8 +48,8 @@ const experiences = [
   {
     id: "birthdays",
     title: "Birthday",
-    subtitle: "Memorable Milestones",
-    description: "Celebrate life's special moments in style. Whether it's a child's whimsical party or an elegant adult celebration, we create memories that last.",
+    subtitle: "Memorable Celebrations",
+    description: "Celebrate your special day in style. From children's wonderland parties to elegant adult celebrations, we create birthday memories that last forever.",
     image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1200&auto=format&fit=crop",
     capacity: "10-200 Guests",
     icon: PartyPopper,
@@ -59,8 +59,8 @@ const experiences = [
   {
     id: "corporate",
     title: "Corporate",
-    subtitle: "Professional Excellence",
-    description: "Host impactful corporate events that inspire and connect. From strategic meetings to large-scale conferences, our venues elevate your business presence.",
+    subtitle: "Business Excellence",
+    description: "Host impactful corporate events that inspire and connect. From strategic meetings to large conferences, elevate your business presence with us.",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop",
     capacity: "20-500 Guests",
     icon: Briefcase,
@@ -71,7 +71,7 @@ const experiences = [
     id: "anniversaries",
     title: "Anniversary",
     subtitle: "Timeless Romance",
-    description: "Commemorate your journey of love with a celebration that reflects your unique story. Intimate settings for couples and gatherings for family.",
+    description: "Celebrate your love story with a memorable anniversary. From intimate dinners to family gatherings, honor your journey with elegance.",
     image: "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?q=80&w=1200&auto=format&fit=crop",
     capacity: "20-180 Guests",
     icon: Wine,
@@ -83,31 +83,31 @@ const experiences = [
 const venues = [
   {
     name: "Grand Lawn",
-    description: "Open-air elegance under the stars",
+    description: "Open-air elegance perfect for grand celebrations",
     capacity: "500-600",
     image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800&auto=format&fit=crop",
-    suitable: ["Wedding Reception", "Sangeet Night", "Cocktail Party"]
+    suitable: ["Wedding Reception", "Anniversary Party", "Birthday Celebration"]
   },
   {
     name: "Banquet Hall",
-    description: "Climate-controlled indoor sophistication",
+    description: "Indoor sophistication for elegant events",
     capacity: "200-300",
     image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800&auto=format&fit=crop",
     suitable: ["Wedding Ceremony", "Corporate Events", "Birthday Gala"]
   },
   {
     name: "Poolside",
-    description: "Refined outdoor celebration by the water",
+    description: "Beautiful waterside setting for special moments",
     capacity: "100-150",
     image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=800&auto=format&fit=crop",
-    suitable: ["Cocktail Reception", "Anniversary Dinner", "Private Party"]
+    suitable: ["Cocktail Party", "Anniversary Dinner", "Birthday Celebration"]
   },
   {
     name: "Rooftop Terrace",
-    description: "Sky-high panoramic views for intimate gatherings",
+    description: "Intimate sky-high venue for exclusive gatherings",
     capacity: "50-80",
     image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=800&auto=format&fit=crop",
-    suitable: ["Corporate Meetings", "Birthday Celebration", "Couple's Dinner"]
+    suitable: ["Corporate Meetings", "Birthday Dinner", "Anniversary Celebration"]
   }
 ];
 
@@ -120,25 +120,34 @@ const amenities = [
   { icon: Shield, label: "Event Security", desc: "Complete safety assurance" }
 ];
 
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Events", href: "/experiences" },
+  { label: "Venues", href: "/venues" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Amenities", href: "/amenities" },
+  { label: "Contact", href: "/contact" },
+];
+
 const testimonials = [
   {
     name: "Priya & Arjun Sharma",
     type: "Wedding",
-    quote: "Chhapak Resort transformed our wedding vision into a fairytale. Every detail was executed with perfection, from the mandap to the final farewell.",
+    quote: "Our wedding at Chhapak Resort was absolutely magical. Every detail was perfect, from the mandap to the final farewell. Truly unforgettable!",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150"
   },
   {
     name: "Vikram Malhotra",
     type: "Corporate Event",
-    quote: "We've hosted multiple leadership retreats here. The professionalism, infrastructure, and service quality are unmatched in the region.",
+    quote: "We've hosted multiple corporate events here. The professionalism, venues, and service quality are truly exceptional.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150"
   },
   {
     name: "Neha Kapoor",
     type: "Birthday Celebration",
-    quote: "My 50th birthday was absolutely magical. The team understood my vision perfectly and delivered beyond expectations.",
+    quote: "My 50th birthday celebration was absolutely perfect. The team understood my vision and delivered beyond expectations.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150"
   }
@@ -157,10 +166,10 @@ function Navbar() {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Experiences", href: "/experiences" },
+    { label: "Events", href: "/experiences" },
     { label: "Venues", href: "/venues" },
     { label: "Gallery", href: "/gallery" },
-    { label: "Amenities", href: "/amenities" },
+    { label: "Services", href: "/amenities" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -202,7 +211,7 @@ function Navbar() {
                   to={item.href}
                   className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                     isScrolled
-                      ? "text-charcoal hover:text-gold hover:bg-gold/5"
+                      ? "text-charcoal hover:text-[rgb(145,118,90)] hover:bg-[rgb(145,118,90)]/5"
                       : "text-white/90 hover:text-white hover:bg-white/10"
                   }`}
                 >
@@ -216,11 +225,11 @@ function Navbar() {
                 to="/inquiry"
                 className={`hidden sm:flex px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                   isScrolled
-                    ? "bg-gold hover:bg-gold-dark text-white"
+                    ? "bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white"
                     : "bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white hover:text-charcoal"
                 }`}
               >
-                Plan Your Event
+                Book Your Event
               </Link>
               <button
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
@@ -271,8 +280,8 @@ function Navbar() {
                   ))}
                 </div>
                 <Link to="/inquiry" onClick={() => setIsMobileOpen(false)} className="mt-6">
-                  <button className="w-full py-4 bg-gold text-white font-semibold rounded-full">
-                    Plan Your Event
+                  <button className="w-full py-4 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white font-semibold rounded-full">
+                    Book Your Event
                   </button>
                 </Link>
               </div>
@@ -317,9 +326,9 @@ function HeroSection() {
           transition={{ duration: 1, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8 tracking-tight"
         >
-          Where Celebrations Become
+         Elevating Celebrations Into
           <span className="block mt-2 bg-gradient-to-r from-gold-light via-gold to-gold-dark bg-clip-text text-transparent">
-            Timeless Memories
+            Unforgettable Experiences
           </span>
         </motion.h1>
 
@@ -329,7 +338,7 @@ function HeroSection() {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-12"
         >
-          An exclusive resort destination for weddings, corporate events, and private celebrations. Experience luxury redefined.
+          Perfect venue for weddings, birthdays, anniversaries, and corporate events. Experience luxury redefined.
         </motion.p>
 
         <motion.div
@@ -342,9 +351,9 @@ function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-gradient-to-r from-gold to-gold-dark text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-gold/30 flex items-center gap-2"
+              className="px-10 py-4 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl flex items-center gap-2"
             >
-              Plan Your Event <ArrowRight className="w-5 h-5" />
+              Book Your Event <ArrowRight className="w-5 h-5" />
             </motion.button>
           </Link>
           <Link to="/experiences">
@@ -353,7 +362,7 @@ function HeroSection() {
               whileTap={{ scale: 0.95 }}
               className="px-10 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/30 transition-all duration-300 hover:bg-white hover:text-charcoal"
             >
-              Explore Experiences
+              Explore Packages
             </motion.button>
           </Link>
         </motion.div>
@@ -365,7 +374,7 @@ function HeroSection() {
           className="grid grid-cols-3 gap-8 max-w-xl mx-auto"
         >
           {[
-            { value: "600+", label: "Events Hosted" },
+            { value: "500+", label: "Events Hosted" },
             { value: "4", label: "Premium Venues" },
             { value: "4.9", label: "Guest Rating" }
           ].map((stat, i) => (
@@ -407,12 +416,12 @@ function ExperiencesSection() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="eyebrow-text">Our Experiences</span>
+          <span className="eyebrow-text">Our Events</span>
           <h2 className="heading-main mb-6">
-            Crafting <span className="text-gradient-gold">Extraordinary</span> Moments
+            Perfect <span className="text-gradient-gold">Celebrations</span> Await
           </h2>
           <p className="heading-sub">
-            From intimate gatherings to grand celebrations, every event is an opportunity to create lasting memories.
+            Weddings, birthdays, anniversaries, and corporate events. Create unforgettable moments at our luxury resort.
           </p>
         </motion.div>
 
@@ -457,7 +466,7 @@ function ExperiencesSection() {
                       ))}
                     </div>
                     <div className="flex items-center text-gold font-semibold group-hover:gap-3 transition-all">
-                      <span>Plan This Event</span>
+                      <span>Book Now</span>
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -483,10 +492,10 @@ function VenuesSection() {
         >
           <span className="eyebrow-text">Our Venues</span>
           <h2 className="heading-main mb-6">
-            Stunning <span className="text-gradient-gold">Spaces</span> for Every Occasion
+            Beautiful <span className="text-gradient-gold">Spaces</span> for Your Events
           </h2>
           <p className="heading-sub">
-            Four distinct venues, each designed to transform your vision into an unforgettable experience.
+            Choose from our stunning venues designed for weddings, birthdays, anniversaries, and corporate celebrations.
           </p>
         </motion.div>
 
@@ -556,9 +565,9 @@ function GalleryPreview() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12"
         >
           <div>
-            <span className="eyebrow-text text-gold-light">Visual Stories</span>
+            <span className="eyebrow-text text-gold-light">Gallery</span>
             <h2 className="heading-main text-white">
-              A Glimpse Into <span className="text-gold-light">Elegance</span>
+              Moments We <span className="text-gold-light">Create</span>
             </h2>
           </div>
           <Link to="/gallery" className="flex items-center gap-2 text-gold-light font-semibold hover:gap-3 transition-all">
@@ -607,12 +616,12 @@ function AmenitiesSection() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="eyebrow-text">Premium Services</span>
+          <span className="eyebrow-text">Our Services</span>
           <h2 className="heading-main mb-6">
-            Complete <span className="text-gradient-gold">Event Solutions</span>
+            Everything You <span className="text-gradient-gold">Need</span>
           </h2>
           <p className="heading-sub">
-            Every detail handled with care, every service designed to exceed expectations.
+            From catering to decor, we provide complete event services for your special celebrations.
           </p>
         </motion.div>
 
@@ -658,9 +667,9 @@ function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="eyebrow-text">Guest Stories</span>
+          <span className="eyebrow-text">Testimonials</span>
           <h2 className="heading-main mb-6">
-            What Our <span className="text-gradient-gold">Clients</span> Say
+            Happy <span className="text-gradient-gold">Clients</span>
           </h2>
         </motion.div>
 
@@ -738,19 +747,19 @@ function CTASection() {
         >
           <Sparkles className="w-12 h-12 text-gold mx-auto mb-6" />
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Ready to Create Your <span className="text-gold-light">Unforgettable</span> Event?
+            Ready to Plan Your <span className="text-gold-light">Perfect</span> Event?
           </h2>
           <p className="text-xl text-white/70 mb-10">
-            Let us bring your vision to life. Share your requirements and our team will craft a personalized proposal.
+            Contact us today for weddings, birthdays, anniversaries, and corporate events. Let's create something extraordinary together.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/inquiry">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-gradient-to-r from-gold to-gold-dark text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-gold/30 flex items-center gap-2"
+                className="px-10 py-4 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl flex items-center gap-2"
               >
-                Request a Proposal <ArrowRight className="w-5 h-5" />
+                Plan Your Celebration <ArrowRight className="w-5 h-5" />
               </motion.button>
             </Link>
             <Link to="/contact">
@@ -786,7 +795,7 @@ function Footer() {
                 </div>
               </Link>
               <p className="text-white/70 leading-relaxed mb-6">
-                A luxury destination for celebrations and experiences. Where every event becomes a timeless memory.
+                A premier resort destination for weddings, birthdays, anniversaries, and corporate events. Create unforgettable moments with us.
               </p>
             </div>
 
@@ -797,7 +806,7 @@ function Footer() {
                   <li key={link}>
                     <Link
                       to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
-                      className="text-white/70 hover:text-gold transition-colors inline-flex items-center gap-2 group"
+                      className="text-white/70 hover:text-[rgb(145,118,90)] transition-colors inline-flex items-center gap-2 group"
                     >
                       {link}
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -808,13 +817,13 @@ function Footer() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg mb-6">Experiences</h3>
+              <h3 className="font-semibold text-lg mb-6">Events</h3>
               <ul className="space-y-3">
                 {["Weddings", "Birthdays", "Anniversaries", "Corporate Events", "Private Parties"].map((link) => (
                   <li key={link}>
                     <Link
                       to={`/experiences/${link.toLowerCase().replace(" ", "-")}`}
-                      className="text-white/70 hover:text-gold transition-colors inline-flex items-center gap-2 group"
+                      className="text-white/70 hover:text-[rgb(145,118,90)] transition-colors inline-flex items-center gap-2 group"
                     >
                       {link}
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -828,19 +837,19 @@ function Footer() {
               <h3 className="font-semibold text-lg mb-6">Contact</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-white/70">
-                  <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[rgb(145,118,90)] flex-shrink-0 mt-0.5" />
                   <span>Chhapak Lake, Near National Highway, India</span>
                 </li>
                 <li className="flex items-center gap-3 text-white/70">
-                  <Phone className="w-5 h-5 text-gold flex-shrink-0" />
-                  <a href="tel:+919876543210" className="hover:text-gold transition-colors">+91 98765 43210</a>
+                  <Phone className="w-5 h-5 text-[rgb(145,118,90)] flex-shrink-0" />
+                    <a href="tel:+919876543210" className="hover:text-[rgb(145,118,90)] transition-colors">+91 98765 43210</a>
                 </li>
                 <li className="flex items-center gap-3 text-white/70">
-                  <Mail className="w-5 h-5 text-gold flex-shrink-0" />
-                  <a href="mailto:hello@chhapakresort.com" className="hover:text-gold transition-colors">hello@chhapakresort.com</a>
+                  <Mail className="w-5 h-5 text-[rgb(145,118,90)] flex-shrink-0" />
+                    <a href="mailto:hello@chhapakresort.com" className="hover:text-[rgb(145,118,90)] transition-colors">hello@chhapakresort.com</a>
                 </li>
                 <li className="flex items-center gap-3 text-white/70">
-                  <Clock className="w-5 h-5 text-gold flex-shrink-0" />
+                  <Clock className="w-5 h-5 text-[rgb(145,118,90)] flex-shrink-0" />
                   <span>Open 24/7 for events</span>
                 </li>
               </ul>
@@ -860,7 +869,7 @@ function Footer() {
                   href={`https://${social}.com`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/5 hover:bg-gold flex items-center justify-center transition-colors capitalize"
+                  className="w-10 h-10 rounded-full bg-white/5 hover:bg-[rgb(145,118,90)] flex items-center justify-center transition-colors capitalize"
                 >
                   {social[0]}
                 </a>

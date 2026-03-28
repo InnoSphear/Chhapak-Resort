@@ -48,7 +48,7 @@ export default function Contact() {
               Contact <span className="text-gradient-gold">Us</span>
             </h1>
             <p className="heading-sub">
-              Have questions or ready to start planning? We'd love to hear from you. Reach out and let's create something extraordinary together.
+              Have questions or ready to start planning your event? We'd love to hear from you. Contact us for weddings, birthdays, and more.
             </p>
           </motion.div>
         </div>
@@ -74,7 +74,7 @@ export default function Contact() {
                     </div>
                     <h3 className="text-2xl font-bold text-charcoal mb-4">Message Sent!</h3>
                     <p className="text-charcoal/70 mb-6">
-                      Thank you for reaching out. Our team will get back to you within 24 hours.
+                      Thank you for reaching out. Our team will get back to you within 24 hours to discuss your event.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
@@ -138,7 +138,7 @@ export default function Contact() {
                         whileTap={{ scale: 0.98 }}
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-4 bg-gold text-white font-semibold rounded-full hover:bg-gold-dark transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                        className="w-full py-4 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white font-semibold rounded-full transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                       >
                         {isSubmitting ? (
                           <>
@@ -182,7 +182,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-charcoal mb-1">Phone</h4>
-                      <a href="tel:+919876543210" className="text-charcoal/70 hover:text-gold transition-colors">
+                      <a href="tel:+919876543210" className="text-charcoal/70 hover:text-[rgb(145,118,90)] transition-colors">
                         +91 98765 43210
                       </a>
                     </div>
@@ -193,7 +193,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-charcoal mb-1">Email</h4>
-                      <a href="mailto:hello@chhapakresort.com" className="text-charcoal/70 hover:text-gold transition-colors">
+                      <a href="mailto:hello@chhapakresort.com" className="text-charcoal/70 hover:text-[rgb(145,118,90)] transition-colors">
                         hello@chhapakresort.com
                       </a>
                     </div>
@@ -214,11 +214,11 @@ export default function Contact() {
               <div className="bg-gradient-to-br from-sand to-champagne rounded-3xl p-8 shadow-xl">
                 <h3 className="text-xl font-bold text-charcoal mb-4">Quick Inquiry</h3>
                 <p className="text-charcoal/70 mb-6">
-                  Prefer to plan your event directly? Use our inquiry form for a personalized proposal.
+                  Ready to plan your event? Use our inquiry form to get a personalized quote for your celebration.
                 </p>
                 <a
                   href="/inquiry"
-                  className="inline-flex items-center gap-2 text-gold font-semibold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-[rgb(145,118,90)] font-semibold hover:gap-3 transition-all"
                 >
                   Go to Inquiry Form
                   <Send className="w-4 h-4" />

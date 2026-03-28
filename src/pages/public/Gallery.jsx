@@ -67,12 +67,12 @@ export default function Gallery() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <span className="eyebrow-text">Visual Stories</span>
+            <span className="eyebrow-text">Gallery</span>
             <h1 className="heading-main mb-6">
-              Our <span className="text-gradient-gold">Gallery</span>
+              Our <span className="text-gradient-gold">Moments</span>
             </h1>
             <p className="heading-sub">
-              A glimpse into the magical moments we've created for our guests. Every event tells a unique story.
+              A glimpse into the beautiful moments we create for weddings, birthdays, anniversaries, and corporate events.
             </p>
           </motion.div>
 
@@ -87,7 +87,7 @@ export default function Gallery() {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
                   activeCategory === cat.id
-                    ? "bg-gold text-white"
+                    ? "bg-[rgb(145,118,90)] text-white"
                     : "bg-white text-charcoal hover:bg-sand"
                 }`}
               >
@@ -151,15 +151,15 @@ export default function Gallery() {
               Want to See More?
             </h2>
             <p className="text-white/70 mb-8 max-w-xl mx-auto">
-              Schedule a visit to experience our venues in person and envision your perfect event.
+              Visit us to experience our beautiful venues in person and plan your perfect wedding, birthday, or event.
             </p>
             <Link to="/inquiry">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-gradient-to-r from-gold to-gold-dark text-white font-semibold rounded-full flex items-center gap-2 mx-auto"
+                className="px-10 py-4 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white font-semibold rounded-full flex items-center gap-2 mx-auto"
               >
-                Schedule a Visit
+                Book Your Event
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
             </Link>

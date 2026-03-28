@@ -15,10 +15,10 @@ export function Button({
   const baseStyles = "inline-flex items-center justify-center font-medium tracking-wide transition-all duration-300 ease-out rounded-full disabled:opacity-50 disabled:cursor-not-allowed";
   
   const variants = {
-    primary: "bg-gold text-white hover:bg-gold-dark hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
-    secondary: "border-2 border-gold text-gold hover:bg-gold hover:text-white active:scale-[0.98]",
+    primary: "bg-[rgb(145,118,90)] text-white hover:bg-[rgb(125,100,75)] hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+    secondary: "border-2 border-[rgb(145,118,90)] text-[rgb(145,118,90)] hover:bg-[rgb(145,118,90)] hover:text-white active:scale-[0.98]",
     ghost: "text-charcoal hover:bg-sand/50 active:scale-[0.98]",
-    outline: "border-2 border-charcoal/20 text-charcoal hover:border-gold hover:text-gold active:scale-[0.98]",
+    outline: "border-2 border-charcoal/20 text-charcoal hover:border-[rgb(145,118,90)] hover:text-[rgb(145,118,90)] active:scale-[0.98]",
   };
 
   const sizes = {
@@ -55,8 +55,8 @@ export function IconButton({
   
   const variants = {
     ghost: "hover:bg-sand/50 text-charcoal",
-    primary: "bg-gold text-white hover:bg-gold-dark",
-    outline: "border border-charcoal/20 hover:border-gold hover:text-gold",
+    primary: "bg-[rgb(145,118,90)] text-white hover:bg-[rgb(125,100,75)]",
+    outline: "border border-charcoal/20 hover:border-[rgb(145,118,90)] hover:text-[rgb(145,118,90)]",
   };
 
   const sizes = {

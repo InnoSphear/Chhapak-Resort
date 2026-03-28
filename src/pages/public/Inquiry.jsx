@@ -18,7 +18,7 @@ const eventTypes = [
   { id: "corporate", label: "Corporate", icon: Briefcase },
   { id: "anniversary", label: "Anniversary", icon: Wine },
   { id: "private-party", label: "Private Party", icon: Sparkles },
-  { id: "other", label: "Other", icon: MessageSquare }
+  { id: "other", label: "Other Event", icon: MessageSquare }
 ];
 
 const steps = [
@@ -87,10 +87,10 @@ export default function Inquiry() {
           {/* HEADER */}
           <div className="text-center mb-10 sm:mb-14">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Plan Your <span className="text-gold">Event</span>
+              Book Your <span className="text-gold">Event</span>
             </h1>
             <p className="text-sm sm:text-base text-charcoal/70 max-w-xl mx-auto">
-              Tell us about your celebration and we’ll craft a luxury experience.
+              Tell us about your celebration. We specialize in weddings, birthdays, anniversaries, and corporate events.
             </p>
           </div>
 
@@ -99,7 +99,7 @@ export default function Inquiry() {
             {steps.map((s) => (
               <div key={s.id} className="flex items-center gap-2">
                 <div className={`w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full font-semibold ${
-                  currentStep >= s.id ? "bg-gold text-white" : "bg-sand text-charcoal/40"
+                  currentStep >= s.id ? "bg-[rgb(145,118,90)] text-white" : "bg-sand text-charcoal/40"
                 }`}>
                   {currentStep > s.id ? <Check /> : s.id}
                 </div>
@@ -125,7 +125,7 @@ export default function Inquiry() {
                             onClick={() => update("eventType", t.id)}
                             className={`p-4 sm:p-6 rounded-2xl border-2 transition ${
                               formData.eventType === t.id
-                                ? "border-gold bg-gold/5"
+                                ? "border-[rgb(145,118,90)] bg-[rgb(145,118,90)]/5"
                                 : "border-sand"
                             }`}
                           >
@@ -192,14 +192,14 @@ export default function Inquiry() {
                     <button
                       onClick={next}
                       disabled={!canProceed()}
-                      className="w-full sm:w-auto px-6 py-3 bg-gold text-white rounded-full"
+                      className="w-full sm:w-auto px-6 py-3 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white rounded-full"
                     >
                       Continue
                     </button>
                   ) : (
                     <button
                       onClick={submit}
-                      className="w-full sm:w-auto px-6 py-3 bg-gold text-white rounded-full"
+                      className="w-full sm:w-auto px-6 py-3 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white rounded-full"
                     >
                       {isSubmitting ? "Submitting..." : "Submit"}
                     </button>
@@ -211,8 +211,9 @@ export default function Inquiry() {
             </>
           ) : (
             <div className="text-center py-12">
-              <h2 className="text-2xl font-bold mb-4">Submitted 🎉</h2>
-              <Link to="/" className="text-gold">Go Home</Link>
+              <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+              <p className="text-charcoal/70 mb-4">Your inquiry has been submitted successfully. We will contact you soon.</p>
+              <Link to="/" className="text-gold hover:text-[rgb(145,118,90)]">Go Home</Link>
             </div>
           )}
 

@@ -47,9 +47,9 @@ export const theme = {
 
 export const luxuryStyles = {
   button: {
-    primary: "bg-gradient-to-r from-gold to-gold-dark text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-gold/20 hover:scale-105",
+    primary: "bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-xl",
     secondary: "bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:bg-white hover:text-charcoal",
-    outline: "border-2 border-gold text-gold px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:bg-gold hover:text-white",
+    outline: "border-2 border-[rgb(145,118,90)] text-[rgb(145,118,90)] px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:bg-[rgb(145,118,90)] hover:text-white",
   },
   card: {
     luxury: "bg-white rounded-3xl shadow-xl shadow-charcoal/5 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2",

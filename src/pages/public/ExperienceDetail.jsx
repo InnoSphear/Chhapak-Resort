@@ -7,9 +7,9 @@ import { Footer } from "../../components/Footer";
 
 const experienceData = {
   weddings: {
-    title: "Wedding Experience",
+    title: "Wedding",
     subtitle: "Fairytale Celebrations",
-    description: "Transform your dream wedding into an unforgettable reality. From intimate ceremonies to grand receptions, we craft every detail with elegance and precision, creating moments that will be cherished for generations.",
+    description: "Create your dream wedding at our luxury resort. From intimate ceremonies to grand receptions, we craft every detail with elegance and precision.",
     heroImage: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2000&auto=format&fit=crop",
     capacity: "Up to 600 Guests",
     priceRange: "₹3 Lakhs - ₹25+ Lakhs",
@@ -30,16 +30,16 @@ const experienceData = {
       "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600"
     ],
     testimonials: [
-      { name: "Priya & Arjun Sharma", quote: "Our wedding was nothing short of magical. The team understood our vision and executed it flawlessly." },
-      { name: "Meera & Karan Patel", quote: "From the mandap to the final farewell, every moment was perfect. Thank you for making our dream wedding a reality." }
+      { name: "Priya & Arjun Sharma", quote: "Our wedding was absolutely magical. The team understood our vision and executed it flawlessly." },
+      { name: "Meera & Karan Patel", quote: "From the mandap to the final farewell, every moment was perfect. Thank you for our dream wedding." }
     ],
     color: "from-rose-400 to-pink-500",
     icon: Heart
   },
   birthdays: {
-    title: "Birthday Experience",
-    subtitle: "Memorable Milestones",
-    description: "Celebrate life's special moments in style. Whether it's a child's whimsical wonderland or an elegant adult celebration, we create memories that last a lifetime with personalized themes and unforgettable experiences.",
+    title: "Birthday Party",
+    subtitle: "Memorable Celebrations",
+    description: "Celebrate your special day with us. From children's wonderland parties to elegant adult celebrations, we create birthday memories that last forever.",
     heroImage: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2000&auto=format&fit=crop",
     capacity: "10-200 Guests",
     priceRange: "₹50,000 - ₹5+ Lakhs",
@@ -60,16 +60,16 @@ const experienceData = {
       "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600"
     ],
     testimonials: [
-      { name: "Neha Kapoor", quote: "My 50th birthday was absolutely magical. The team understood my vision perfectly and delivered beyond expectations." },
+      { name: "Neha Kapoor", quote: "My 50th birthday was absolutely magical. The team understood my vision perfectly." },
       { name: "Raj Malhotra", quote: "The kids had an absolute blast! Best birthday party we've ever hosted." }
     ],
     color: "from-violet-400 to-purple-500",
     icon: PartyPopper
   },
   corporate: {
-    title: "Corporate Experience",
-    subtitle: "Professional Excellence",
-    description: "Host impactful corporate events that inspire and connect. From strategic meetings to large-scale conferences, our venues elevate your business presence with world-class facilities and impeccable service.",
+    title: "Corporate Event",
+    subtitle: "Business Excellence",
+    description: "Host impactful corporate events that inspire. From strategic meetings to large conferences, elevate your business presence with our professional venues.",
     heroImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop",
     capacity: "20-500 Guests",
     priceRange: "₹1 Lakh - ₹15+ Lakhs",
@@ -90,16 +90,16 @@ const experienceData = {
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600"
     ],
     testimonials: [
-      { name: "Vikram Malhotra", quote: "We've hosted multiple leadership retreats here. The professionalism and infrastructure are unmatched." },
-      { name: "Sunita Reddy", quote: "Our annual conference was a huge success. The team was incredibly responsive and professional." }
+      { name: "Vikram Malhotra", quote: "We've hosted multiple corporate events here. The professionalism and venues are truly exceptional." },
+      { name: "Sunita Reddy", quote: "Our annual conference was a huge success. The team was incredibly responsive." }
     ],
     color: "from-blue-400 to-indigo-500",
     icon: Briefcase
   },
   anniversaries: {
-    title: "Anniversary Experience",
+    title: "Anniversary",
     subtitle: "Timeless Romance",
-    description: "Commemorate your journey of love with a celebration that reflects your unique story. From intimate couples' dinners to family gatherings, we create deeply personal moments that honor your relationship.",
+    description: "Celebrate your love story with us. From intimate dinners to family gatherings, honor your journey with elegant anniversary celebrations.",
     heroImage: "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?q=80&w=2000&auto=format&fit=crop",
     capacity: "20-180 Guests",
     priceRange: "₹75,000 - ₹8+ Lakhs",
@@ -121,7 +121,7 @@ const experienceData = {
     ],
     testimonials: [
       { name: "Deepa & Rajesh Mehta", quote: "They surprised us with a beautiful video of our 25-year journey. We were moved to tears." },
-      { name: "Anita & Sanjay Gupta", quote: "Our 10th anniversary celebration was perfect in every way. The attention to detail was remarkable." }
+      { name: "Anita & Sanjay Gupta", quote: "Our 10th anniversary celebration was perfect. The attention to detail was remarkable." }
     ],
     color: "from-amber-400 to-orange-500",
     icon: Wine
@@ -185,9 +185,9 @@ function ExperienceHero({ data, type }) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-gradient-to-r from-gold to-gold-dark text-white font-semibold rounded-full transition-all hover:shadow-xl"
+              className="px-8 py-3 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white font-semibold rounded-full transition-all hover:shadow-xl"
             >
-              Plan This Event
+              Book Your Event
             </motion.button>
           </Link>
         </motion.div>
@@ -208,7 +208,7 @@ function FeaturesSection({ features }) {
         >
           <span className="eyebrow-text">What's Included</span>
           <h2 className="heading-main">
-            Complete <span className="text-gradient-gold">Event Solutions</span>
+            Everything For Your <span className="text-gradient-gold">Perfect Event</span>
           </h2>
         </motion.div>
 
@@ -332,18 +332,18 @@ function CTASection({ type }) {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Ready to Start Planning?
+            Ready to Book Your Event?
           </h2>
           <p className="text-white/70 mb-8 max-w-xl mx-auto">
-            Let us bring your vision to life. Share your requirements and our team will craft a personalized proposal.
+            Contact us today to plan your wedding, birthday, anniversary, or corporate event. Let's create something extraordinary together.
           </p>
           <Link to="/inquiry" state={{ eventType: type }}>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-gradient-to-r from-gold to-gold-dark text-white font-semibold rounded-full"
+              className="px-10 py-4 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white font-semibold rounded-full"
             >
-              Request a Proposal
+              Plan Your Celebration
             </motion.button>
           </Link>
         </motion.div>

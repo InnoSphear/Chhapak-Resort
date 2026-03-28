@@ -88,12 +88,12 @@ export default function Amenities() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="eyebrow-text">Premium Services</span>
+            <span className="eyebrow-text">Our Services</span>
             <h1 className="heading-main mb-6">
-              Complete <span className="text-gradient-gold">Event Solutions</span>
+              Everything You <span className="text-gradient-gold">Need</span>
             </h1>
             <p className="heading-sub">
-              Every detail handled with care, every service designed to exceed expectations. From start to finish, we ensure your event is nothing short of extraordinary.
+              From catering to decor, we provide complete event services for your special celebrations. Let us make your event perfect.
             </p>
           </motion.div>
         </div>
@@ -184,15 +184,15 @@ export default function Amenities() {
               Need Something Special?
             </h2>
             <p className="text-white/70 mb-8 max-w-xl mx-auto">
-              We offer customized packages for unique requirements. Let us know your vision and we'll make it happen.
+              We offer customized packages for your unique requirements. Contact us to discuss your vision.
             </p>
             <Link to="/inquiry">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-gradient-to-r from-gold to-gold-dark text-white font-semibold rounded-full flex items-center gap-2 mx-auto"
+                className="px-10 py-4 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white font-semibold rounded-full flex items-center gap-2 mx-auto"
               >
-                Discuss Your Requirements
+                Plan Your Event
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
             </Link>

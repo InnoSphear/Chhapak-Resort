@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ivory: #FFFEF9;
-  --color-cream: #FAF7F0;
+  --color-ivory: #D1D5DB;
+  --color-cream: #D1D5DB;
   --color-sand: #F5F0E8;
   --color-champagne: #E8DFD0;
   --color-gold-light: #D4AF37;
@@ -24,7 +24,7 @@
   }
 
   body {
-    @apply bg-ivory text-charcoal font-sans;
+    @apply bg-gray-700 text-charcoal font-sans;
     font-family: 'Outfit', sans-serif;
   }
 

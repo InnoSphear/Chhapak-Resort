@@ -8,7 +8,7 @@ const venues = [
   {
     name: "Grand Lawn",
     tagline: "Under the Stars",
-    description: "Our crown jewel offers a breathtaking open-air setting perfect for grand wedding receptions and spectacular outdoor celebrations. With capacity for 500-600 guests, the lawn transforms into a magical venue under our signature starlit canopy.",
+    description: "Our stunning outdoor venue perfect for grand wedding receptions and spectacular celebrations. With capacity for 500-600 guests, the lawn transforms into a magical setting.",
     capacity: "500-600",
     size: "15,000 sq ft",
     image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1200&auto=format&fit=crop",
@@ -17,13 +17,13 @@ const venues = [
       "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600",
       "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600"
     ],
-    suitable: ["Wedding Reception", "Sangeet Night", "Mehndi Ceremony", "Cocktail Party", "Product Launch"],
-    features: ["Starlit Canopy", "Central Stage", "Garden Landscaping", "Ambient Lighting", "Climate Control Options"]
+    suitable: ["Wedding Reception", "Anniversary Party", "Birthday Celebration", "Corporate Event"],
+    features: ["Starlit Canopy", "Central Stage", "Garden Landscaping", "Ambient Lighting", "Climate Control"]
   },
   {
     name: "Banquet Hall",
     tagline: "Indoor Elegance",
-    description: "A sophisticated climate-controlled indoor venue that combines classic elegance with modern amenities. Ideal for wedding ceremonies, corporate galas, and formal celebrations requiring refined interiors.",
+    description: "A sophisticated climate-controlled indoor venue perfect for wedding ceremonies, corporate events, and formal celebrations with refined interiors.",
     capacity: "200-300",
     size: "8,000 sq ft",
     image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
@@ -32,13 +32,13 @@ const venues = [
       "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600",
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600"
     ],
-    suitable: ["Wedding Ceremony", "Corporate Events", "Birthday Gala", "Award Ceremony", "Annual Dinner"],
+    suitable: ["Wedding Ceremony", "Corporate Events", "Birthday Gala", "Anniversary Dinner"],
     features: ["Central AC", "Crystal Chandeliers", "Built-in Stage", "Sound System", "Modular Layout"]
   },
   {
     name: "Poolside Terrace",
-    tagline: "Refined Waterside",
-    description: "An enchanting poolside setting that blends natural beauty with sophisticated ambiance. Perfect for cocktail receptions, anniversary dinners, and intimate celebrations with a resort feel.",
+    tagline: "Waterside Beauty",
+    description: "A beautiful poolside setting perfect for cocktail receptions, anniversary dinners, and intimate birthday celebrations with a resort atmosphere.",
     capacity: "100-150",
     size: "5,000 sq ft",
     image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1200&auto=format&fit=crop",
@@ -47,13 +47,13 @@ const venues = [
       "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?w=600",
       "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600"
     ],
-    suitable: ["Cocktail Reception", "Anniversary Dinner", "Private Party", "Birthday Celebration", "Team Gathering"],
-    features: ["Infinity Pool View", "Tropical Landscaping", "Ambient Music", "Fire Pit Seating", "Starlit Evenings"]
+    suitable: ["Cocktail Party", "Anniversary Dinner", "Birthday Celebration", "Private Party"],
+    features: ["Pool View", "Tropical Landscaping", "Ambient Music", "Fire Pit Seating", "Evening Lighting"]
   },
   {
     name: "Rooftop Terrace",
-    tagline: "Sky-High Panoramas",
-    description: "Our rooftop venue offers breathtaking 360-degree views and an intimate atmosphere for exclusive gatherings. Perfect for corporate meetings, couple's celebrations, and sophisticated cocktail events.",
+    tagline: "Sky-High Views",
+    description: "Our rooftop venue offers stunning views and an intimate atmosphere for exclusive gatherings. Perfect for corporate meetings and special celebrations.",
     capacity: "50-80",
     size: "3,000 sq ft",
     image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1200&auto=format&fit=crop",
@@ -62,7 +62,7 @@ const venues = [
       "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?w=600",
       "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600"
     ],
-    suitable: ["Corporate Meetings", "Birthday Celebration", "Couple's Dinner", "Small Wedding", "Networking Event"],
+    suitable: ["Corporate Meetings", "Birthday Dinner", "Anniversary Celebration", "Small Wedding"],
     features: ["Panoramic Views", "Sky Lounge Setup", "Private Bar", "Climate Control", "Exclusive Access"]
   }
 ];
@@ -79,12 +79,12 @@ export default function Venues() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="eyebrow-text">Our Spaces</span>
+            <span className="eyebrow-text">Our Venues</span>
             <h1 className="heading-main mb-6">
-              Stunning <span className="text-gradient-gold">Venues</span> for Every Occasion
+              Beautiful <span className="text-gradient-gold">Spaces</span> for Your Events
             </h1>
             <p className="heading-sub">
-              Four distinct spaces, each designed to transform your vision into an unforgettable experience. From intimate gatherings to grand celebrations.
+              Choose from our stunning venues designed for weddings, birthdays, anniversaries, and corporate celebrations.
             </p>
           </motion.div>
         </div>
@@ -162,7 +162,7 @@ export default function Venues() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-gold text-white font-semibold rounded-full flex items-center gap-2 hover:bg-gold-dark transition-colors"
+                    className="px-8 py-4 bg-[rgb(145,118,90)] text-white font-semibold rounded-full flex items-center gap-2 hover:bg-[rgb(125,100,75)] transition-colors"
                   >
                     Check Availability
                     <ArrowRight className="w-5 h-5" />
@@ -186,13 +186,13 @@ export default function Venues() {
               Let Us Help You Choose
             </h2>
             <p className="text-white/70 mb-8 max-w-xl mx-auto">
-              Our event specialists can guide you in selecting the perfect venue based on your requirements and vision.
+              Our event specialists can help you select the perfect venue for your wedding, birthday, anniversary, or corporate event.
             </p>
             <Link to="/inquiry">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-gradient-to-r from-gold to-gold-dark text-white font-semibold rounded-full"
+                className="px-10 py-4 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white font-semibold rounded-full"
               >
                 Get Expert Advice
               </motion.button>

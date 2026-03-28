@@ -19,18 +19,18 @@ export function Footer() {
                 </div>
               </Link>
               <p className="text-white/70 leading-relaxed mb-6">
-                A luxury destination for celebrations and experiences. Where every event becomes a timeless memory.
+                A premier resort destination for weddings, birthdays, anniversaries, and corporate events. Create unforgettable moments with us.
               </p>
             </div>
 
             <div>
               <h3 className="font-semibold text-lg mb-6">Quick Links</h3>
               <ul className="space-y-3">
-                {["Home", "Experiences", "Venues", "Gallery", "Amenities", "Contact"].map((link) => (
+                {["Home", "Events", "Venues", "Gallery", "Services", "Contact"].map((link) => (
                   <li key={link}>
                     <Link
                       to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
-                      className="text-white/70 hover:text-gold transition-colors inline-flex items-center gap-2 group"
+                      className="text-white/70 hover:text-[rgb(145,118,90)] transition-colors inline-flex items-center gap-2 group"
                     >
                       {link}
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -41,13 +41,13 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg mb-6">Experiences</h3>
+              <h3 className="font-semibold text-lg mb-6">Events</h3>
               <ul className="space-y-3">
                 {["Weddings", "Birthdays", "Anniversaries", "Corporate Events", "Private Parties"].map((link) => (
                   <li key={link}>
                     <Link
                       to={`/experiences/${link.toLowerCase().replace(" ", "-")}`}
-                      className="text-white/70 hover:text-gold transition-colors inline-flex items-center gap-2 group"
+                      className="text-white/70 hover:text-[rgb(145,118,90)] transition-colors inline-flex items-center gap-2 group"
                     >
                       {link}
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -61,19 +61,19 @@ export function Footer() {
               <h3 className="font-semibold text-lg mb-6">Contact</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-white/70">
-                  <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[rgb(145,118,90)] flex-shrink-0 mt-0.5" />
                   <span>Chhapak Lake, Near National Highway, India</span>
                 </li>
                 <li className="flex items-center gap-3 text-white/70">
-                  <Phone className="w-5 h-5 text-gold flex-shrink-0" />
-                  <a href="tel:+919876543210" className="hover:text-gold transition-colors">+91 98765 43210</a>
+                  <Phone className="w-5 h-5 text-[rgb(145,118,90)] flex-shrink-0" />
+                  <a href="tel:+919876543210" className="hover:text-[rgb(145,118,90)] transition-colors">+91 98765 43210</a>
                 </li>
                 <li className="flex items-center gap-3 text-white/70">
-                  <Mail className="w-5 h-5 text-gold flex-shrink-0" />
-                  <a href="mailto:hello@chhapakresort.com" className="hover:text-gold transition-colors">hello@chhapakresort.com</a>
+                  <Mail className="w-5 h-5 text-[rgb(145,118,90)] flex-shrink-0" />
+                  <a href="mailto:hello@chhapakresort.com" className="hover:text-[rgb(145,118,90)] transition-colors">hello@chhapakresort.com</a>
                 </li>
                 <li className="flex items-center gap-3 text-white/70">
-                  <Clock className="w-5 h-5 text-gold flex-shrink-0" />
+                  <Clock className="w-5 h-5 text-[rgb(145,118,90)] flex-shrink-0" />
                   <span>Open 24/7 for events</span>
                 </li>
               </ul>
@@ -93,7 +93,7 @@ export function Footer() {
                   href={`https://${social}.com`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/5 hover:bg-gold flex items-center justify-center transition-colors capitalize"
+                  className="w-10 h-10 rounded-full bg-white/5 hover:bg-[rgb(145,118,90)] flex items-center justify-center transition-colors capitalize"
                 >
                   {social[0]}
                 </a>

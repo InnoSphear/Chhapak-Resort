@@ -5,10 +5,10 @@ import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Experiences", href: "/experiences" },
+  { label: "Events", href: "/experiences" },
   { label: "Venues", href: "/venues" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Amenities", href: "/amenities" },
+  { label: "Services", href: "/amenities" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -51,7 +51,7 @@ export function Navbar() {
                 <span className="text-white font-bold text-xl">C</span>
               </motion.div>
               <div className="hidden sm:block">
-                <h1 className={`font-bold text-xl tracking-tight transition-colors ${isScrolled ? "text-charcoal" : "text-white"}`}>
+                <h1 className={`font-bold text-xl tracking-tight transition-colors ${isScrolled ? "text-charcoal" : "text-black"}`}>
                   Chhapak
                 </h1>
                 <p className={`text-xs tracking-[0.3em] uppercase ${isScrolled ? "text-gold" : "text-gold-light"}`}>
@@ -60,17 +60,17 @@ export function Navbar() {
               </div>
             </Link>
 
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-1 text-black">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                     location.pathname === link.href
-                      ? "bg-gold/10 text-gold"
+                      ? "bg-[rgb(145,118,90)]/10 text-[rgb(145,118,90)]"
                       : isScrolled
-                      ? "text-charcoal hover:text-gold hover:bg-gold/5"
-                      : "text-white/90 hover:text-white hover:bg-white/10"
+                      ? "text-charcoal hover:text-[rgb(145,118,90)] hover:bg-[rgb(145,118,90)]/5"
+                      : "text-black/90 hover:text-black hover:bg-white/10"
                   }`}
                 >
                   {link.label}
@@ -83,11 +83,11 @@ export function Navbar() {
                 to="/inquiry"
                 className={`hidden sm:flex px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                   isScrolled
-                    ? "bg-gold hover:bg-gold-dark text-white"
-                    : "bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white hover:text-charcoal"
+                    ? "bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white"
+                    : "bg-black/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white hover:text-charcoal"
                 }`}
               >
-                Plan Your Event
+                Book Your Event
               </Link>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -133,11 +133,11 @@ export function Navbar() {
                       <Link
                         to={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`block px-4 py-4 text-lg font-medium transition-colors rounded-2xl ${
-                          location.pathname === link.href
-                            ? "bg-gold/10 text-gold"
-                            : "text-charcoal hover:text-gold hover:bg-gold/5"
-                        }`}
+                      className={`block px-4 py-4 text-lg font-medium transition-colors rounded-2xl ${
+                        location.pathname === link.href
+                          ? "bg-[rgb(145,118,90)]/10 text-[rgb(145,118,90)]"
+                          : "text-charcoal hover:text-[rgb(145,118,90)] hover:bg-[rgb(145,118,90)]/5"
+                      }`}
                       >
                         {link.label}
                       </Link>
@@ -147,8 +147,8 @@ export function Navbar() {
 
                 <div className="pt-6 border-t border-sand">
                   <Link to="/inquiry" onClick={() => setIsMobileMenuOpen(false)}>
-                    <button className="w-full py-4 bg-gold text-white font-semibold rounded-full">
-                      Plan Your Event
+                    <button className="w-full py-4 bg-[rgb(145,118,90)] hover:bg-[rgb(125,100,75)] text-white font-semibold rounded-full">
+                      Book Your Event
                     </button>
                   </Link>
                 </div>

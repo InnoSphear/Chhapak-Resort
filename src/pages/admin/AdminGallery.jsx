@@ -137,8 +137,8 @@ export default function AdminGallery() {
             onClick={() => setFilter(type)}
             className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
               filter === type
-                ? "bg-gold text-white"
-                : "bg-white border border-slate-200 text-slate-600 hover:border-gold"
+                ? "bg-[rgb(145,118,90)] text-white"
+                : "bg-white border border-slate-200 text-slate-600 hover:border-[rgb(145,118,90)]"
             }`}
           >
             {type.charAt(0).toUpperCase() + type.slice(1)}

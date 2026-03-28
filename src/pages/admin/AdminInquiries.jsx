@@ -345,7 +345,7 @@ export default function AdminInquiries() {
               <div className="flex gap-3">
                 <a
                   href={`mailto:${selectedInquiry.email}`}
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gold text-white font-semibold hover:bg-gold-dark transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[rgb(145,118,90)] text-white font-semibold hover:bg-[rgb(125,100,75)] transition-colors"
                 >
                   <Mail className="w-5 h-5" />
                   Send Email
