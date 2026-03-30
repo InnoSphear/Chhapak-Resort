@@ -3,6 +3,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, Users, Check, Maximize2 } from "lucide-react";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
+import weddingImg1 from "../../assets/weeding/FTF_4783.JPG";
+import weddingImg2 from "../../assets/weeding/FTF_4781.JPG";
+import weddingImg3 from "../../assets/weeding/FTF_4779.JPG";
+import weddingImg4 from "../../assets/weeding/FTF_4734.JPG";
+import weddingImg5 from "../../assets/weeding/FTF_4707.JPG";
+import weddingImg6 from "../../assets/weeding/FTF_4633.JPG";
+import weddingImg7 from "../../assets/weeding/FTF_4211.JPG";
+import weddingImg8 from "../../assets/weeding/FTF_4134.JPG";
 
 const venues = [
   {
@@ -11,12 +19,8 @@ const venues = [
     description: "Our stunning outdoor venue perfect for grand wedding receptions and spectacular celebrations. With capacity for 500-600 guests, the lawn transforms into a magical setting.",
     capacity: "500-600",
     size: "15,000 sq ft",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1200&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600",
-      "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600",
-      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600"
-    ],
+    image: weddingImg1,
+    images: [weddingImg1, weddingImg2, weddingImg3],
     suitable: ["Wedding Reception", "Anniversary Party", "Birthday Celebration", "Corporate Event"],
     features: ["Starlit Canopy", "Central Stage", "Garden Landscaping", "Ambient Lighting", "Climate Control"]
   },
@@ -26,12 +30,8 @@ const venues = [
     description: "A sophisticated climate-controlled indoor venue perfect for wedding ceremonies, corporate events, and formal celebrations with refined interiors.",
     capacity: "200-300",
     size: "8,000 sq ft",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600",
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600",
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600"
-    ],
+    image: weddingImg4,
+    images: [weddingImg4, weddingImg5, weddingImg6],
     suitable: ["Wedding Ceremony", "Corporate Events", "Birthday Gala", "Anniversary Dinner"],
     features: ["Central AC", "Crystal Chandeliers", "Built-in Stage", "Sound System", "Modular Layout"]
   },
@@ -41,12 +41,8 @@ const venues = [
     description: "A beautiful poolside setting perfect for cocktail receptions, anniversary dinners, and intimate birthday celebrations with a resort atmosphere.",
     capacity: "100-150",
     size: "5,000 sq ft",
-    image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1200&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600",
-      "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?w=600",
-      "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600"
-    ],
+    image: weddingImg7,
+    images: [weddingImg7, weddingImg8, weddingImg1],
     suitable: ["Cocktail Party", "Anniversary Dinner", "Birthday Celebration", "Private Party"],
     features: ["Pool View", "Tropical Landscaping", "Ambient Music", "Fire Pit Seating", "Evening Lighting"]
   },
@@ -56,12 +52,8 @@ const venues = [
     description: "Our rooftop venue offers stunning views and an intimate atmosphere for exclusive gatherings. Perfect for corporate meetings and special celebrations.",
     capacity: "50-80",
     size: "3,000 sq ft",
-    image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1200&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600",
-      "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?w=600",
-      "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600"
-    ],
+    image: weddingImg2,
+    images: [weddingImg2, weddingImg3, weddingImg4],
     suitable: ["Corporate Meetings", "Birthday Dinner", "Anniversary Celebration", "Small Wedding"],
     features: ["Panoramic Views", "Sky Lounge Setup", "Private Bar", "Climate Control", "Exclusive Access"]
   }

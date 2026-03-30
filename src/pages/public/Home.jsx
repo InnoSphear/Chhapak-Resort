@@ -6,9 +6,6 @@ import {
   ChevronDown, 
   Sparkles, 
   Heart, 
-  PartyPopper, 
-  Briefcase, 
-  Wine, 
   Users, 
   MapPin,
   Phone,
@@ -18,18 +15,21 @@ import {
   Check,
   Menu,
   X,
-  Play,
   Image as ImageIcon,
-  Calendar,
   Camera,
   Utensils,
   Music,
   Car,
   Shield,
-  Flower2,
-  ArrowUpRight
+  Flower2
 } from "lucide-react";
-import axios from "axios";
+import heroImage from "../../assets/hero.JPG";
+import weddingImg1 from "../../assets/weeding/FTF_4783.JPG";
+import weddingImg2 from "../../assets/weeding/FTF_4781.JPG";
+import weddingImg3 from "../../assets/weeding/FTF_4779.JPG";
+import weddingImg4 from "../../assets/weeding/FTF_4734.JPG";
+import weddingImg5 from "../../assets/weeding/FTF_4707.JPG";
+import weddingImg6 from "../../assets/weeding/FTF_4633.JPG";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
@@ -39,44 +39,11 @@ const experiences = [
     title: "Wedding",
     subtitle: "Fairytale Celebrations",
     description: "Create your dream wedding at our luxury resort. From intimate ceremonies to grand receptions, every detail is crafted with elegance and perfection.",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
+    image: weddingImg1,
     capacity: "Up to 600 Guests",
     icon: Heart,
     features: ["Mandap Setup", "Bridal Suite", "Custom Catering", "Decor Design"],
     color: "from-rose-400 to-pink-500"
-  },
-  {
-    id: "birthdays",
-    title: "Birthday",
-    subtitle: "Memorable Celebrations",
-    description: "Celebrate your special day in style. From children's wonderland parties to elegant adult celebrations, we create birthday memories that last forever.",
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1200&auto=format&fit=crop",
-    capacity: "10-200 Guests",
-    icon: PartyPopper,
-    features: ["Theme Decor", "Party Packages", "Entertainment", "Cake Service"],
-    color: "from-violet-400 to-purple-500"
-  },
-  {
-    id: "corporate",
-    title: "Corporate",
-    subtitle: "Business Excellence",
-    description: "Host impactful corporate events that inspire and connect. From strategic meetings to large conferences, elevate your business presence with us.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop",
-    capacity: "20-500 Guests",
-    icon: Briefcase,
-    features: ["AV Equipment", "Catering Service", "Breakout Rooms", "High-Speed WiFi"],
-    color: "from-blue-400 to-indigo-500"
-  },
-  {
-    id: "anniversaries",
-    title: "Anniversary",
-    subtitle: "Timeless Romance",
-    description: "Celebrate your love story with a memorable anniversary. From intimate dinners to family gatherings, honor your journey with elegance.",
-    image: "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?q=80&w=1200&auto=format&fit=crop",
-    capacity: "20-180 Guests",
-    icon: Wine,
-    features: ["Romantic Setup", "Special Menu", "Photography", "Live Music"],
-    color: "from-amber-400 to-orange-500"
   }
 ];
 
@@ -85,28 +52,28 @@ const venues = [
     name: "Grand Lawn",
     description: "Open-air elegance perfect for grand celebrations",
     capacity: "500-600",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800&auto=format&fit=crop",
+    image: weddingImg2,
     suitable: ["Wedding Reception", "Anniversary Party", "Birthday Celebration"]
   },
   {
     name: "Banquet Hall",
     description: "Indoor sophistication for elegant events",
     capacity: "200-300",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800&auto=format&fit=crop",
+    image: weddingImg3,
     suitable: ["Wedding Ceremony", "Corporate Events", "Birthday Gala"]
   },
   {
     name: "Poolside",
     description: "Beautiful waterside setting for special moments",
     capacity: "100-150",
-    image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=800&auto=format&fit=crop",
+    image: weddingImg4,
     suitable: ["Cocktail Party", "Anniversary Dinner", "Birthday Celebration"]
   },
   {
     name: "Rooftop Terrace",
     description: "Intimate sky-high venue for exclusive gatherings",
     capacity: "50-80",
-    image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=800&auto=format&fit=crop",
+    image: weddingImg5,
     suitable: ["Corporate Meetings", "Birthday Dinner", "Anniversary Celebration"]
   }
 ];
@@ -135,21 +102,21 @@ const testimonials = [
     type: "Wedding",
     quote: "Our wedding at Chhapak Resort was absolutely magical. Every detail was perfect, from the mandap to the final farewell. Truly unforgettable!",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150"
+    image: weddingImg1
   },
   {
     name: "Vikram Malhotra",
     type: "Corporate Event",
     quote: "We've hosted multiple corporate events here. The professionalism, venues, and service quality are truly exceptional.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150"
+    image: weddingImg2
   },
   {
     name: "Neha Kapoor",
     type: "Birthday Celebration",
     quote: "My 50th birthday celebration was absolutely perfect. The team understood my vision and delivered beyond expectations.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150"
+    image: weddingImg3
   }
 ];
 
@@ -302,7 +269,7 @@ function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2000&auto=format&fit=crop"
+          src={heroImage}
           alt="Chhapak Resort"
           className="w-full h-full object-cover"
         />
@@ -547,12 +514,12 @@ function VenuesSection() {
 
 function GalleryPreview() {
   const images = [
-    "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600",
-    "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600",
-    "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600",
-    "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?w=600",
-    "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600",
-    "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600",
+    weddingImg1,
+    weddingImg2,
+    weddingImg3,
+    weddingImg4,
+    weddingImg5,
+    weddingImg6,
   ];
 
   return (
@@ -732,7 +699,7 @@ function CTASection() {
     <section className="relative py-32 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2000&auto=format&fit=crop"
+          src={heroImage}
           alt="CTA Background"
           className="w-full h-full object-cover"
         />

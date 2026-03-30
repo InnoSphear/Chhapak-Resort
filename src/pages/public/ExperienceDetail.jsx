@@ -1,16 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Heart, PartyPopper, Briefcase, Wine, Users, Check, Calendar, Sparkles, ArrowUp, Music } from "lucide-react";
+import { ArrowRight, Heart, Users, Check, Calendar, Sparkles, ArrowUp } from "lucide-react";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
+import weddingImg1 from "../../assets/weeding/FTF_4783.JPG";
+import weddingImg2 from "../../assets/weeding/FTF_4781.JPG";
+import weddingImg3 from "../../assets/weeding/FTF_4779.JPG";
+import weddingImg4 from "../../assets/weeding/FTF_4734.JPG";
+import weddingImg5 from "../../assets/weeding/FTF_4707.JPG";
+import weddingImg6 from "../../assets/weeding/FTF_4633.JPG";
 
 const experienceData = {
   weddings: {
     title: "Wedding",
     subtitle: "Fairytale Celebrations",
     description: "Create your dream wedding at our luxury resort. From intimate ceremonies to grand receptions, we craft every detail with elegance and precision.",
-    heroImage: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2000&auto=format&fit=crop",
+    heroImage: weddingImg1,
     capacity: "Up to 600 Guests",
     priceRange: "₹3 Lakhs - ₹25+ Lakhs",
     features: [
@@ -21,14 +27,7 @@ const experienceData = {
       { icon: Calendar, title: "Multi-day Events", desc: "Haldi, Mehndi, Sangeet, Wedding & Reception" },
       { icon: Check, title: "Guest Management", desc: "Complete hospitality for all attendees" }
     ],
-    gallery: [
-      "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600",
-      "https://images.unsplash.com/photo-1519741497674-611481863552?w=600",
-      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600",
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600",
-      "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=600",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600"
-    ],
+    gallery: [weddingImg1, weddingImg2, weddingImg3, weddingImg4, weddingImg5, weddingImg6],
     testimonials: [
       { name: "Priya & Arjun Sharma", quote: "Our wedding was absolutely magical. The team understood our vision and executed it flawlessly." },
       { name: "Meera & Karan Patel", quote: "From the mandap to the final farewell, every moment was perfect. Thank you for our dream wedding." }
@@ -40,91 +39,70 @@ const experienceData = {
     title: "Birthday Party",
     subtitle: "Memorable Celebrations",
     description: "Celebrate your special day with us. From children's wonderland parties to elegant adult celebrations, we create birthday memories that last forever.",
-    heroImage: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2000&auto=format&fit=crop",
+    heroImage: weddingImg1,
     capacity: "10-200 Guests",
     priceRange: "₹50,000 - ₹5+ Lakhs",
     features: [
       { icon: Sparkles, title: "Theme Design", desc: "Custom themes from whimsical to sophisticated" },
-      { icon: PartyPopper, title: "Entertainment", desc: "Games, performers, and activities" },
+      { icon: ArrowUp, title: "Entertainment", desc: "Games, performers, and activities" },
       { icon: Calendar, title: "Party Packages", desc: "All-inclusive celebration packages" },
       { icon: Check, title: "Cake Service", desc: "Custom cakes and dessert stations" },
       { icon: Users, title: "Photo Moments", desc: "Instant photography and keepsakes" },
       { icon: Check, title: "Catering", desc: "Kid-friendly and adult menus available" }
     ],
-    gallery: [
-      "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600",
-      "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=600",
-      "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=600",
-      "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=600",
-      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600"
-    ],
+    gallery: [],
     testimonials: [
       { name: "Neha Kapoor", quote: "My 50th birthday was absolutely magical. The team understood my vision perfectly." },
       { name: "Raj Malhotra", quote: "The kids had an absolute blast! Best birthday party we've ever hosted." }
     ],
     color: "from-violet-400 to-purple-500",
-    icon: PartyPopper
+    icon: ArrowUp
   },
   corporate: {
     title: "Corporate Event",
     subtitle: "Business Excellence",
     description: "Host impactful corporate events that inspire. From strategic meetings to large conferences, elevate your business presence with our professional venues.",
-    heroImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop",
+    heroImage: weddingImg1,
     capacity: "20-500 Guests",
     priceRange: "₹1 Lakh - ₹15+ Lakhs",
     features: [
-      { icon: Briefcase, title: "Meeting Rooms", desc: "Intimate boardrooms to large conference halls" },
+      { icon: ArrowUp, title: "Meeting Rooms", desc: "Intimate boardrooms to large conference halls" },
       { icon: Sparkles, title: "AV Equipment", desc: "State-of-the-art presentation technology" },
       { icon: Check, title: "Catering Service", desc: "Business lunches and networking events" },
       { icon: Users, title: "Breakout Spaces", desc: "Private areas for discussions" },
       { icon: Calendar, title: "Team Building", desc: "Activities and retreats" },
       { icon: Check, title: "High-Speed WiFi", desc: "Enterprise-grade connectivity" }
     ],
-    gallery: [
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600",
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600",
-      "https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=600",
-      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600",
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600"
-    ],
+    gallery: [],
     testimonials: [
       { name: "Vikram Malhotra", quote: "We've hosted multiple corporate events here. The professionalism and venues are truly exceptional." },
       { name: "Sunita Reddy", quote: "Our annual conference was a huge success. The team was incredibly responsive." }
     ],
     color: "from-blue-400 to-indigo-500",
-    icon: Briefcase
+    icon: ArrowUp
   },
   anniversaries: {
     title: "Anniversary",
     subtitle: "Timeless Romance",
     description: "Celebrate your love story with us. From intimate dinners to family gatherings, honor your journey with elegant anniversary celebrations.",
-    heroImage: "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?q=80&w=2000&auto=format&fit=crop",
+    heroImage: weddingImg1,
     capacity: "20-180 Guests",
     priceRange: "₹75,000 - ₹8+ Lakhs",
     features: [
       { icon: Heart, title: "Romantic Setup", desc: "Customized décor reflecting your journey" },
-      { icon: Wine, title: "Special Menu", desc: "Curated multi-course dinners" },
+      { icon: ArrowUp, title: "Special Menu", desc: "Curated multi-course dinners" },
       { icon: Sparkles, title: "Photography", desc: "Professional capture of your celebration" },
-      { icon: Music, title: "Live Music", desc: "Serenades and instrumental performances" },
+      { icon: ArrowUp, title: "Live Music", desc: "Serenades and instrumental performances" },
       { icon: Check, title: "Video Montage", desc: "Your story displayed beautifully" },
       { icon: Users, title: "Family Events", desc: "Inclusive celebrations for loved ones" }
     ],
-    gallery: [
-      "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600",
-      "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
-      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600",
-      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600",
-      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600"
-    ],
+    gallery: [],
     testimonials: [
       { name: "Deepa & Rajesh Mehta", quote: "They surprised us with a beautiful video of our 25-year journey. We were moved to tears." },
       { name: "Anita & Sanjay Gupta", quote: "Our 10th anniversary celebration was perfect. The attention to detail was remarkable." }
     ],
     color: "from-amber-400 to-orange-500",
-    icon: Wine
+    icon: Heart
   }
 };
 

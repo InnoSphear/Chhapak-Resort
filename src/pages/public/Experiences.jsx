@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Heart, PartyPopper, Briefcase, Wine, Users, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Heart, Users } from "lucide-react";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
+import weddingImg1 from "../../assets/weeding/FTF_4783.JPG";
+import weddingImg2 from "../../assets/weeding/FTF_4781.JPG";
+import weddingImg3 from "../../assets/weeding/FTF_4779.JPG";
+import weddingImg4 from "../../assets/weeding/FTF_4734.JPG";
 
 const experiences = [
   {
@@ -10,48 +14,12 @@ const experiences = [
     title: "Wedding",
     subtitle: "Fairytale Celebrations",
     description: "Create your dream wedding at our luxury resort. From intimate ceremonies to grand receptions, every detail is crafted with elegance.",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
+    image: weddingImg1,
     capacity: "Up to 600 Guests",
     icon: Heart,
     color: "from-rose-400 to-pink-500",
     gradient: "bg-gradient-to-br from-rose-50 to-pink-50",
     accent: "text-rose-500"
-  },
-  {
-    id: "birthdays",
-    title: "Birthday",
-    subtitle: "Memorable Celebrations",
-    description: "Celebrate your special day with us. From children's wonderland parties to elegant adult celebrations, create birthday memories that last.",
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1200&auto=format&fit=crop",
-    capacity: "10-200 Guests",
-    icon: PartyPopper,
-    color: "from-violet-400 to-purple-500",
-    gradient: "bg-gradient-to-br from-violet-50 to-purple-50",
-    accent: "text-violet-500"
-  },
-  {
-    id: "corporate",
-    title: "Corporate",
-    subtitle: "Business Excellence",
-    description: "Host impactful corporate events that inspire. From meetings to conferences, elevate your business presence with our professional venues.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop",
-    capacity: "20-500 Guests",
-    icon: Briefcase,
-    color: "from-blue-400 to-indigo-500",
-    gradient: "bg-gradient-to-br from-blue-50 to-indigo-50",
-    accent: "text-blue-500"
-  },
-  {
-    id: "anniversaries",
-    title: "Anniversary",
-    subtitle: "Timeless Romance",
-    description: "Celebrate your love story with us. From intimate dinners to family gatherings, honor your special day with elegance and style.",
-    image: "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?q=80&w=1200&auto=format&fit=crop",
-    capacity: "20-180 Guests",
-    icon: Wine,
-    color: "from-amber-400 to-orange-500",
-    gradient: "bg-gradient-to-br from-amber-50 to-orange-50",
-    accent: "text-amber-500"
   }
 ];
 

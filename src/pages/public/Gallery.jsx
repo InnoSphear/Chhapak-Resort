@@ -4,34 +4,65 @@ import { X, ChevronLeft, ChevronRight, Image as ImageIcon, ArrowRight } from "lu
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { Link } from "react-router-dom";
+import weddingImg1 from "../../assets/weeding/FTF_4783.JPG";
+import weddingImg2 from "../../assets/weeding/FTF_4781.JPG";
+import weddingImg3 from "../../assets/weeding/FTF_4779.JPG";
+import weddingImg4 from "../../assets/weeding/FTF_4734.JPG";
+import weddingImg5 from "../../assets/weeding/FTF_4707.JPG";
+import weddingImg6 from "../../assets/weeding/FTF_4633.JPG";
+import weddingImg7 from "../../assets/weeding/FTF_4211.JPG";
+import weddingImg8 from "../../assets/weeding/FTF_4134.JPG";
+import weddingImg9 from "../../assets/weeding/FTF_4085.JPG";
+import weddingImg10 from "../../assets/weeding/DSC_9494.JPG";
+import weddingImg11 from "../../assets/weeding/DSC_9414.JPG";
+import weddingImg12 from "../../assets/weeding/DSC_9409.JPG";
+import weddingImg13 from "../../assets/weeding/DSC_9405.JPG";
+import weddingImg14 from "../../assets/weeding/DSC_9383.JPG";
+import weddingImg15 from "../../assets/weeding/DSC_9378.JPG";
+import weddingImg16 from "../../assets/weeding/DSC_9373.JPG";
+import weddingImg17 from "../../assets/weeding/DSC_9369.JPG";
+import weddingImg18 from "../../assets/weeding/DSC_9051.JPG";
+import weddingImg19 from "../../assets/weeding/DSC_9046.JPG";
+import weddingImg20 from "../../assets/weeding/DSC_9040.JPG";
+import weddingImg21 from "../../assets/weeding/DSC_9028.JPG";
+import weddingImg22 from "../../assets/weeding/DSC_9027.JPG";
+
+const weddingImages = [
+  weddingImg1, weddingImg2, weddingImg3, weddingImg4, weddingImg5,
+  weddingImg6, weddingImg7, weddingImg8, weddingImg9, weddingImg10,
+  weddingImg11, weddingImg12, weddingImg13, weddingImg14, weddingImg15,
+  weddingImg16, weddingImg17, weddingImg18, weddingImg19, weddingImg20,
+  weddingImg21, weddingImg22
+];
 
 const galleryItems = [
-  { id: 1, type: "image", src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200", category: "weddings", title: "Grand Wedding Reception" },
-  { id: 2, type: "image", src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200", category: "venues", title: "Lawn Setup" },
-  { id: 3, type: "image", src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1200", category: "celebrations", title: "Birthday Celebration" },
-  { id: 4, type: "image", src: "https://images.unsplash.com/photo-1529543544277-065dc7f37fdf?w=1200", category: "anniversaries", title: "Anniversary Dinner" },
-  { id: 5, type: "image", src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200", category: "corporate", title: "Corporate Gala" },
-  { id: 6, type: "image", src: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=1200", category: "venues", title: "Poolside Evening" },
-  { id: 7, type: "image", src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200", category: "celebrations", title: "Anniversary Party" },
-  { id: 8, type: "image", src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200", category: "weddings", title: "Wedding Ceremony" },
-  { id: 9, type: "image", src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200", category: "weddings", title: "Bridal Preparations" },
-  { id: 10, type: "image", src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200", category: "weddings", title: "Wedding Decor" },
-  { id: 11, type: "image", src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200", category: "weddings", title: "Reception Setup" },
-  { id: 12, type: "image", src: "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=1200", category: "celebrations", title: "Party Setup" },
-  { id: 13, type: "image", src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200", category: "venues", title: "Rooftop View" },
-  { id: 14, type: "image", src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200", category: "corporate", title: "Conference Room" },
-  { id: 15, type: "image", src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1200", category: "celebrations", title: "Birthday Decor" },
-  { id: 16, type: "image", src: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=1200", category: "weddings", title: "Wedding Venue" },
-  { id: 17, type: "image", src: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200", category: "corporate", title: "Event Setup" },
-  { id: 18, type: "image", src: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200", category: "corporate", title: "Presentation" },
+  { id: 1, type: "image", src: weddingImg1, category: "weddings", title: "Grand Wedding Reception" },
+  { id: 2, type: "image", src: weddingImg2, category: "weddings", title: "Wedding Ceremony" },
+  { id: 3, type: "image", src: weddingImg3, category: "weddings", title: "Wedding Decor" },
+  { id: 4, type: "image", src: weddingImg4, category: "weddings", title: "Reception Setup" },
+  { id: 5, type: "image", src: weddingImg5, category: "weddings", title: "Wedding Venue" },
+  { id: 6, type: "image", src: weddingImg6, category: "weddings", title: "Wedding Moments" },
+  { id: 7, type: "image", src: weddingImg7, category: "weddings", title: "Celebration" },
+  { id: 8, type: "image", src: weddingImg8, category: "weddings", title: "Wedding Ceremony" },
+  { id: 9, type: "image", src: weddingImg9, category: "weddings", title: "Bridal Preparations" },
+  { id: 10, type: "image", src: weddingImg10, category: "weddings", title: "Wedding Decor" },
+  { id: 11, type: "image", src: weddingImg11, category: "weddings", title: "Reception Setup" },
+  { id: 12, type: "image", src: weddingImg12, category: "weddings", title: "Wedding Moments" },
+  { id: 13, type: "image", src: weddingImg13, category: "weddings", title: "Celebration" },
+  { id: 14, type: "image", src: weddingImg14, category: "weddings", title: "Wedding Ceremony" },
+  { id: 15, type: "image", src: weddingImg15, category: "weddings", title: "Wedding Decor" },
+  { id: 16, type: "image", src: weddingImg16, category: "weddings", title: "Wedding Venue" },
+  { id: 17, type: "image", src: weddingImg17, category: "weddings", title: "Wedding Moments" },
+  { id: 18, type: "image", src: weddingImg18, category: "weddings", title: "Celebration" },
+  { id: 19, type: "image", src: weddingImg19, category: "weddings", title: "Wedding Ceremony" },
+  { id: 20, type: "image", src: weddingImg20, category: "weddings", title: "Wedding Decor" },
+  { id: 21, type: "image", src: weddingImg21, category: "weddings", title: "Reception Setup" },
+  { id: 22, type: "image", src: weddingImg22, category: "weddings", title: "Wedding Moments" },
 ];
 
 const categories = [
   { id: "all", label: "All" },
   { id: "weddings", label: "Weddings" },
-  { id: "celebrations", label: "Celebrations" },
-  { id: "corporate", label: "Corporate" },
-  { id: "venues", label: "Venues" },
 ];
 
 export default function Gallery() {

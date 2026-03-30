@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronLeft, Eye, EyeOff, LogIn, ShieldCheck, Sparkles } from "lucide-react";
 import { authApi } from "../../lib/api";
+import heroImage from "../../assets/hero.JPG";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ export default function AdminLogin() {
       >
         <div className="relative hidden min-h-[640px] overflow-hidden lg:block">
           <img
-            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1400&auto=format&fit=crop"
+            src={heroImage}
             alt="Chhapak Resort"
             className="absolute inset-0 h-full w-full object-cover"
           />
